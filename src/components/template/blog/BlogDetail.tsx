@@ -10,7 +10,6 @@ import { AppImage } from "~/components/atoms/image/Image";
 import ClipboardJS from "clipboard";
 import { CircleLoading } from "~/components/atoms/loading/CircleLoading";
 import dayjs from "dayjs";
-import { CustomMeta } from "~/components/atoms/meta/Meta";
 
 marked.setOptions({
   highlight: (code) => {
@@ -77,10 +76,6 @@ export function BlogDetail({ content }: BlogDetailProps) {
 
   return (
     <div id="detail-all-wrapper">
-      <CustomMeta
-        pageImg={`https:${content?.photo.fields.file.url}`}
-        isPublicImg={false}
-      />
       <Show when={cleanHTML() !== ""} fallback={<CircleLoading />}>
         <div class="blog-detail">
           <div id="title-date">

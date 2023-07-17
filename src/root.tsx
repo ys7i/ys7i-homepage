@@ -29,8 +29,11 @@ export default function Root() {
       <Head>
         <Meta charset="utf-8" />
         <Meta name="viewport" content="width=device-width, initial-scale=1" />
+        <CustomMeta
+          pageTitle="Yuhi Sakaguchi Personal Site"
+          pageImg="/public/ogp-photo.jpg"
+        />
       </Head>
-      <CustomMeta pageTitle="Yuhi Sakaguchi Personal Site" />
       <Body classList={{ "overflow-hidden": isOverflowHidden() }}>
         <Suspense>
           <ErrorBoundary>

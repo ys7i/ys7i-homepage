@@ -36,7 +36,6 @@ export function CoverBackground(props: CoverBackgroundProps) {
 
   return (
     <section class="cover-section" style={{ height: `${height}vh` }}>
-      <CustomMeta pageImg={props.src} />
       <div class="cover-image" style={{ height: `${height}vh` }}>
         <AppImage
           src={props.src}
