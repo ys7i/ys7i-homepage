@@ -5,6 +5,7 @@ import { BoxWithImage } from "~/components/molecules/box/BoxWithImage";
 import { BlogCard } from "~/components/organisms/card/BlogCard";
 import { AppCarousel } from "~/components/molecules/carousel/AppCarousel";
 import { TypedText } from "~/components/atoms/text/TypedText";
+import { Show } from "solid-js";
 
 interface BlogCoverProps {
   entries: EntryResource;
@@ -30,21 +31,26 @@ export function BlogCover({ entries }: BlogCoverProps) {
         <div class="blog-right-section"></div>
       </div>
       <div class="blog-carousel">
-        <AppCarousel
-          items={
-            entries()?.map((item) => (
-              <div id="blog-card-wrapper">
-                <BlogCard
-                  title={item.title}
-                  image={`https:${item.photo.fields.file.url}`}
-                  description={item.summary}
-                  createdAt={item.createdAt}
-                  id={item.id}
-                />
-              </div>
-            )) ?? []
-          }
-        />
+        <Show when={entries() !== undefined} fallback={<></>}>
+          <AppCarousel
+            items={
+              entries()?.map((item) => {
+                console.log(entries()?.length);
+                return (
+                  <div id="blog-card-wrapper">
+                    <BlogCard
+                      title={item.title}
+                      image={`https:${item.photo.fields.file.url}`}
+                      description={item.summary}
+                      createdAt={item.createdAt}
+                      id={item.id}
+                    />
+                  </div>
+                );
+              }) ?? []
+            }
+          />
+        </Show>
       </div>
     </section>
   );

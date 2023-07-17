@@ -7,7 +7,11 @@ export default defineConfig({
   plugins: [
     solid({
       ssr: true,
-      adapter: vercel({}),
+      adapter: vercel({
+        prerender: {
+          expiration: 60,
+        },
+      }),
     }),
   ],
 });

@@ -5,7 +5,7 @@ import { MainBody } from "~/components/template/main/MainBody";
 
 export function routeData() {
   return createServerData$(() => {
-    return getBlogEntries(0, 12);
+    return getBlogEntries(0, 6);
   });
 }
 
