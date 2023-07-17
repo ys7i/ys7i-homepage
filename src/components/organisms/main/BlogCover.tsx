@@ -35,7 +35,6 @@ export function BlogCover({ entries }: BlogCoverProps) {
           <AppCarousel
             items={
               entries()?.map((item) => {
-                console.log(entries()?.length);
                 return (
                   <div id="blog-card-wrapper">
                     <BlogCard
