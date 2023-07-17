@@ -21,7 +21,6 @@ export default function Home() {
   return (
     <main style={{ "margin-bottom": "-10vh" }}>
       <Title>ys7i.com</Title>
-      <div style={{ height: "100px" }}></div>
       <Show when={Boolean(entry())} fallback={<CircleLoading />}>
         <BlogDetail content={entry() ?? null} />
       </Show>

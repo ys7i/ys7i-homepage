@@ -50,7 +50,7 @@ export default function ContactCard() {
         region,
       });
 
-      // await sesClient.send(sendEmailCommand);
+      await sesClient.send(sendEmailCommand);
       return redirect("/contact/submitted");
     } catch (e) {
       console.error("Failed to send email.");
