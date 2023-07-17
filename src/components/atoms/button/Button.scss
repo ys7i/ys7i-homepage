@@ -15,7 +15,7 @@
     font-size: 1.2rem;
   }
   &:hover {
-    background-color: transparent;
+    background-color: root.$background-color;
     outline: 1px solid root.$text-primary;
     // border-width: 1px;
     // outline: none;

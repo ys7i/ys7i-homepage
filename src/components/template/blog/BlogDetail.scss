@@ -17,9 +17,6 @@
   background-repeat: repeat;
   background-image: url("/backgrounds/blog-detail.jpg");
   padding-bottom: 10vh;
-
-  // background-color: rgba(255, 255, 255, 0.8);
-  // background-blend-mode: overlay;
 }
 
 #blog-toc {
@@ -108,8 +105,6 @@
 }
 
 hr {
-  // color: root.$grey;
-  // border-top: 1px solid black;
   border: none;
   background-color: root.$background-color;
   border-width: 0.5px 0 0 0;

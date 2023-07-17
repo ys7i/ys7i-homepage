@@ -8,6 +8,7 @@ interface TypedTextProps {
   textAlign?: "start" | "end" | "center";
   speed: "fast" | "normal" | "slow";
   loop?: boolean;
+  size?: "small" | "normal";
 }
 
 export function TypedText({
@@ -15,14 +16,12 @@ export function TypedText({
   textAlign = "start",
   loop = false,
   speed,
+  size = "normal",
 }: TypedTextProps) {
   let ref: HTMLDivElement | undefined;
   let typed: Typed;
   onMount(() => {
-    console.log("mounted");
-
     if (ref !== undefined) {
-      console.log("mounted inside");
       const typed = new Typed(ref, {
         strings: [text.join("<br/>")],
         typeSpeed: speed === "fast" ? 50 : speed === "normal" ? 70 : 150,
@@ -37,7 +36,14 @@ export function TypedText({
     typed?.destroy();
   });
   return (
-    <div class="typed-text" style={{ "text-align": textAlign }}>
+    <div
+      classList={{
+        "normal-size": size === "normal",
+        "typed-text": true,
+        "small-size": size === "small",
+      }}
+      style={{ "text-align": textAlign }}
+    >
       <span ref={ref} />
     </div>
   );

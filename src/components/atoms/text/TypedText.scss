@@ -2,6 +2,9 @@
 
 .typed-text {
   color: root.$text-primary;
+}
+
+.normal-size {
   @include root.mobile {
     font-size: 40px;
   }
@@ -10,5 +13,17 @@
   }
   @include root.desktop {
     font-size: 100px;
+  }
+}
+
+.small-size {
+  @include root.mobile {
+    font-size: 20px;
+  }
+  @include root.tablet {
+    font-size: 50px;
+  }
+  @include root.desktop {
+    font-size: 70px;
   }
 }
