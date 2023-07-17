@@ -6,6 +6,7 @@ import {
   onCleanup,
 } from "solid-js";
 import { AppImage } from "~/components/atoms/image/Image";
+import { CustomMeta } from "~/components/atoms/meta/Meta";
 import "./CoverBackground.scss";
 
 interface CoverBackgroundProps {
@@ -35,6 +36,7 @@ export function CoverBackground(props: CoverBackgroundProps) {
 
   return (
     <section class="cover-section" style={{ height: `${height}vh` }}>
+      <CustomMeta pageImg={props.src} />
       <div class="cover-image" style={{ height: `${height}vh` }}>
         <AppImage
           src={props.src}
