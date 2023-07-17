@@ -6,7 +6,6 @@ export default defineConfig({
   base: "/",
   plugins: [
     solid({
-      ssr: true,
       adapter: vercel({
         prerender: {
           expiration: 60,
