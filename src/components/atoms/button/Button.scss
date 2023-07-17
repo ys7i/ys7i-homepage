@@ -3,7 +3,15 @@
 .app-button {
   background-color: root.$text-secondary;
   border-radius: 8px;
-  height: 50px;
+  @include root.mobile {
+    height: 30px;
+  }
+  @include root.tablet {
+    height: 40px;
+  }
+  @include root.desktop {
+    height: 50px;
+  }
   padding: 0.5em;
   display: flex;
   justify-content: center;
@@ -12,7 +20,18 @@
   p {
     font-family: poppins-extralight, poppins, sans-serif;
     text-align: center;
-    font-size: 1.2rem;
+    @include root.desktop {
+      font-size: 16px;
+      font-weight: 350;
+    }
+    @include root.tablet {
+      font-size: 15px;
+      font-weight: 350;
+    }
+    @include root.mobile {
+      font-size: 14px;
+      font-weight: 350;
+    }
   }
   &:hover {
     background-color: root.$background-color;

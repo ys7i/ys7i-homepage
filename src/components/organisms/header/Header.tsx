@@ -65,10 +65,26 @@ export function Header({ setOverFlowHidden }: HeaderProps) {
         </div>
         <Show when={isNarrowHeaderActive()}>
           <div class="narrow-header-body">
-            <Link text="Home" href="/" />
-            <Link text="About" href="/about" />
-            <Link text="Blog" href="/blog" />
-            <Link text="Contact" href="/contact" />
+            <Link
+              text="Home"
+              href="/"
+              onClick={() => setIsNarrowHeaderActive(false)}
+            />
+            <Link
+              text="About"
+              href="/about"
+              onClick={() => setIsNarrowHeaderActive(false)}
+            />
+            <Link
+              text="Blog"
+              href="/blog"
+              onClick={() => setIsNarrowHeaderActive(false)}
+            />
+            <Link
+              text="Contact"
+              href="/contact"
+              onClick={() => setIsNarrowHeaderActive(false)}
+            />
           </div>
         </Show>
       </div>

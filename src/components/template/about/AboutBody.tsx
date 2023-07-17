@@ -27,7 +27,7 @@ export function AboutBody({ skills }: AboutBodyProps) {
       <ScrollAbout skills={skills} />
       <div class="contact-sentence">
         <AppText
-          variant="h3"
+          variant="h5"
           text="Please contact me through the Contact page."
           inputClass="accent"
         />
