@@ -1,0 +1,49 @@
+@use "../../../root.scss" as root;
+
+a {
+  font-size: 1.2rem;
+  &:link {
+    text-decoration: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  &:hover {
+    animation: HoverColor 0.3s forwards;
+    color: root.$text-secondary;
+  }
+  &:active {
+    text-shadow: 6px 6px 7px root.$text-secondary;
+  }
+}
+
+.not-current {
+  color: root.$text-primary;
+  animation: NonHoverColor 0.3s forwards;
+  &:hover {
+    animation: HoverColor 0.3s forwards;
+    color: root.$text-secondary;
+  }
+  &:active {
+    text-shadow: 6px 6px 7px root.$text-secondary;
+  }
+}
+
+.current {
+  color: root.$text-dark-primary;
+}
+
+@keyframes HoverColor {
+  from {
+  }
+  to {
+    color: root.$text-secondary;
+  }
+}
+
+@keyframes NonHoverColor {
+  from {
+  }
+  to {
+    color: root.$text-primary;
+  }
+}

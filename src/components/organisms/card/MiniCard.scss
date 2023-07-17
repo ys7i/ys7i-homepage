@@ -1,0 +1,21 @@
+@use "../../../root.scss" as root;
+.mini-card {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: row;
+  gap: 2rem;
+  width: 13rem;
+  border-radius: 5px;
+  padding-left: 10px;
+  outline: 0.5px solid root.$text-primary;
+  background-color: root.$background-color;
+  height: 90px;
+  z-index: 10;
+}
+
+.mini-card-img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}

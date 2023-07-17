@@ -1,0 +1,76 @@
+@use "../../../root.scss" as root;
+
+footer {
+  border-top: 1px solid root.$grey;
+  min-height: 200px;
+  padding-top: 2rem;
+  color: root.$text-dark-primary;
+  margin-bottom: 2rem;
+  width: 100%;
+  margin-top: 10vh;
+}
+
+.footer-flex {
+  @include root.mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    svg {
+      padding: 8px;
+    }
+    .footer-symbol {
+      display: none;
+    }
+    margin-bottom: 4rem;
+  }
+  @include root.tablet {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    svg {
+      padding: 8px;
+    }
+    .footer-symbol {
+      display: none;
+    }
+  }
+  @include root.desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10rem;
+    align-items: start;
+    margin-bottom: 2rem;
+  }
+}
+
+.footer-sitemap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1.5rem;
+  a {
+    display: "block";
+  }
+  @include root.mobile {
+    display: none;
+  }
+}
+
+.icon-links {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.margin-top {
+  margin-top: 2rem;
+}
+
+a {
+  color: root.$text-dark-primary;
+}

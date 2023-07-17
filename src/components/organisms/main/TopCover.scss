@@ -1,0 +1,16 @@
+@use "../../../root.scss" as root;
+
+.top-cover-text {
+  height: 90vh;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  display: flex;
+  justify-content: start;
+  gap: 3rem;
+  align-items: start;
+  flex-direction: column;
+  @include root.mobile {
+    width: 80%;
+  }
+}

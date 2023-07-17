@@ -1,0 +1,41 @@
+@use "../../../root.scss" as root;
+.swiper {
+  width: 100%;
+  padding: 45px 0;
+  height: 800px;
+  overflow: visible;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.swiper-slide {
+  opacity: 0.4;
+  overflow: visible;
+  transition: 0.7s;
+  margin-top: 200px;
+}
+
+.swiper-slide img {
+  width: 100%;
+}
+
+.swiper-slide-active {
+  opacity: 1;
+  @include root.desktop {
+    transform: scale(1.2);
+  }
+}
+
+.app-carousel [class^="swiper-button-"] {
+  color: root.$text-primary;
+  &::after {
+    font-size: 80px;
+    @include root.mobile {
+      display: none;
+    }
+    @include root.tablet {
+      display: none;
+    }
+  }
+}

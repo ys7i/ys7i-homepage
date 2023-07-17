@@ -1,0 +1,37 @@
+@use "../../../root.scss" as root;
+
+.input-text {
+  margin-left: 10px;
+  border: none;
+  border-left: solid 1px root.$text-dark-primary;
+  border-width: 8px;
+  background-color: root.$background-color;
+  font-size: 1rem;
+  color: root.$text-primary;
+  padding: 0.5rem;
+  @include root.desktop {
+    width: 100%;
+  }
+  @include root.tablet {
+    width: 100%;
+  }
+  @include root.desktop {
+    width: 100%;
+  }
+  @include root.font-family;
+  &:focus,
+  &:-webkit-autofill,
+  &:-webkit-autofill:focus {
+    outline: 0;
+    background-color: root.$shadow-color;
+    transition: background-color 600000s 0s, color 600000s 0s;
+  }
+}
+
+textarea {
+  height: 5rem;
+}
+
+.form-field {
+  width: 100%;
+}

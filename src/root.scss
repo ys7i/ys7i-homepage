@@ -1,0 +1,82 @@
+// 色定義
+$background-color: #020210;
+$background-opposite-color: #f4f4f5;
+$shadow-color: black;
+$text-primary: #fff;
+$text-dark-primary: #7d7d7d;
+$text-secondary: #fd6262;
+$text-dark-secondary: #9f4242;
+$text-accent: #889ce7;
+
+$grey: #888;
+
+@mixin font-family {
+  font-family: HelveticaNeue, "Helvetica Neue", Helvetica, Arial, 游ゴシック体,
+    YuGothic, "游ゴシック Medium", "Yu Gothic Medium", 游ゴシック, "Yu Gothic",
+    "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro W3",
+    "Hiragino Kaku Gothic Pro", "MS ゴシック", "MS Gothic", sans-serif;
+}
+
+body {
+  font-family: Gordita, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+  margin: 0;
+  background-color: $background-color;
+  @include font-family;
+}
+
+@media (min-width: 480px) {
+  h1 {
+    max-width: none;
+  }
+
+  p {
+    max-width: none;
+  }
+}
+
+.primary {
+  color: $text-primary;
+}
+
+.secondary {
+  color: $text-secondary;
+}
+
+.accent {
+  color: $text-accent;
+}
+
+.background {
+  color: $background-color;
+}
+
+.dark-primary {
+  color: $text-dark-primary;
+}
+
+.text-align-start {
+  text-align: start;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+@mixin mobile {
+  @media screen and (max-width: 599px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 1300px) and (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1300px) {
+    @content;
+  }
+}

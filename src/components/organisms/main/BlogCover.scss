@@ -1,0 +1,101 @@
+@use "../../../root.scss" as root;
+
+.blog-section {
+  width: 100%;
+  position: relative;
+  @include root.mobile {
+    margin-bottom: 200px;
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.blog-cover-title {
+  @include root.mobile {
+    position: relative;
+    top: 100px;
+  }
+  @include root.tablet {
+  }
+  @include root.desktop {
+    margin-bottom: 40px;
+  }
+}
+
+.blog-background {
+  margin-left: 10%;
+  margin-right: 10%;
+  z-index: -1;
+  width: 80%;
+  display: flex;
+  @include root.mobile {
+    flex-direction: column;
+    height: 500px;
+  }
+  @include root.tablet {
+    flex-direction: column;
+    height: 800px;
+  }
+  @include root.desktop {
+    flex-direction: row;
+    height: 800px;
+  }
+  background-color: root.$background-color;
+  justify-content: stretch;
+  position: relative;
+}
+
+.blog-left-section {
+  box-sizing: border-box;
+  border: 0.1px solid root.$grey;
+  @include root.mobile {
+    width: 100%;
+    height: 600px;
+  }
+  @include root.tablet {
+    width: 100%;
+  }
+  @include root.desktop {
+    width: 50%;
+  }
+}
+
+.blog-right-section {
+  box-sizing: border-box;
+  border: 0.1px solid root.$grey;
+  @include root.mobile {
+    display: none;
+  }
+  @include root.tablet {
+    width: 100%;
+  }
+  @include root.desktop {
+    width: 50%;
+  }
+}
+
+.blog-carousel {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  @include root.mobile {
+    top: 0;
+  }
+  @include root.tablet {
+    top: 5%;
+  }
+  @include root.desktop {
+    top: 20%;
+  }
+}
+
+#blog-card-wrapper {
+  width: 320px;
+  height: 480px;
+  box-sizing: border-box;
+  outline: 0.5px solid white;
+  margin: 0 auto;
+  overflow: hidden;
+}

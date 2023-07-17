@@ -1,0 +1,9 @@
+@use "../../../root.scss" as root;
+
+svg {
+  color: root.$text-primary;
+  fill: root.$text-primary;
+  padding: 1em;
+  width: 2rem;
+  height: 2rem;
+}

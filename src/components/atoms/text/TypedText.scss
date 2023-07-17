@@ -1,0 +1,14 @@
+@use "../../../root.scss" as root;
+
+.typed-text {
+  color: root.$text-primary;
+  @include root.mobile {
+    font-size: 40px;
+  }
+  @include root.tablet {
+    font-size: 70px;
+  }
+  @include root.desktop {
+    font-size: 100px;
+  }
+}

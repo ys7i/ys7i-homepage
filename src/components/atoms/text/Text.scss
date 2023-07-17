@@ -1,0 +1,137 @@
+@use "../../../root.scss" as root;
+h1 {
+  @include root.desktop {
+    font-size: 70px;
+    font-weight: 700;
+  }
+  @include root.tablet {
+    font-size: 65px;
+    font-weight: 650;
+  }
+  @include root.mobile {
+    font-size: 60px;
+    font-weight: 600;
+  }
+}
+
+h2 {
+  @include root.desktop {
+    font-size: 65px;
+    font-weight: 650;
+  }
+  @include root.tablet {
+    font-size: 60px;
+    font-weight: 600;
+  }
+  @include root.mobile {
+    font-size: 55px;
+    font-weight: 550;
+  }
+}
+
+h3 {
+  @include root.desktop {
+    font-size: 50px;
+    font-weight: 500;
+  }
+  @include root.tablet {
+    font-size: 47px;
+    font-weight: 450;
+  }
+  @include root.mobile {
+    font-size: 43px;
+    font-weight: 400;
+  }
+}
+
+h4 {
+  @include root.desktop {
+    font-size: 40px;
+    font-weight: 350;
+  }
+  @include root.tablet {
+    font-size: 38px;
+    font-weight: 350;
+  }
+  @include root.mobile {
+    font-size: 36px;
+    font-weight: 350;
+  }
+}
+
+h5 {
+  @include root.desktop {
+    font-size: 30px;
+    font-weight: 350;
+  }
+  @include root.tablet {
+    font-size: 28px;
+    font-weight: 350;
+  }
+  @include root.mobile {
+    font-size: 26px;
+    font-weight: 350;
+  }
+}
+
+h6 {
+  margin-block-start: 0;
+  margin-block-end: 4px;
+  @include root.desktop {
+    font-size: 20px;
+    font-weight: 350;
+    line-height: 30px;
+  }
+  @include root.tablet {
+    font-size: 18px;
+    font-weight: 350;
+  }
+  @include root.mobile {
+    font-size: 16px;
+    font-weight: 350;
+  }
+}
+
+p {
+  @include root.desktop {
+    font-size: 16px;
+    font-weight: 350;
+  }
+  @include root.tablet {
+    font-size: 15px;
+    font-weight: 350;
+  }
+  @include root.mobile {
+    font-size: 14px;
+    font-weight: 350;
+  }
+}
+
+.font-medium {
+  @include root.desktop {
+    font-size: 24px;
+  }
+  @include root.tablet {
+    font-size: 22px;
+  }
+  @include root.mobile {
+    font-size: 20px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  text-align: center;
+}
+
+.blog-card-summary {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}

@@ -1,0 +1,22 @@
+@use "../../../root.scss" as root;
+
+.flex-start {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+
+.coin-icon {
+  padding: 1em;
+}
+
+.color-primary {
+  color: root.$text-primary;
+  fill: root.$text-primary;
+}
+
+.color-secondary {
+  color: root.$text-secondary;
+  fill: root.$text-secondary;
+}

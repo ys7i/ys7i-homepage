@@ -1,0 +1,164 @@
+@use "../../../root.scss" as root;
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header.upmove {
+  animation: UpAnime 0.5s forwards;
+}
+
+@keyframes UpAnime {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
+
+header.downmove {
+  animation: DownAnime 0.5s forwards;
+}
+@keyframes DownAnime {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header-link {
+  padding-right: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  gap: 1rem;
+}
+
+@mixin large-heaader-style {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  height: 4rem;
+  padding: 1rem;
+  background-color: root.$background-color;
+  z-index: 100;
+}
+
+.large-header {
+  @include root.mobile {
+    display: none;
+  }
+  @include root.tablet {
+    display: none;
+  }
+  @include root.desktop {
+    @include large-heaader-style;
+  }
+}
+
+.narrow-header {
+  @include root.desktop {
+    display: none;
+  }
+}
+
+.narrow-header-top {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  z-index: 100;
+}
+
+.narrow-header-button {
+  position: relative; /*ボタン内側の基点となるためrelativeを指定*/
+  // background: #57a2c7;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  margin-right: 5px;
+  z-index: 100;
+}
+
+/*ボタン内側*/
+.narrow-header-button span {
+  display: inline-block;
+  transition: all 0.4s;
+  position: absolute;
+  left: 14px;
+  height: 3px;
+  border-radius: 2px;
+  background: #fff;
+  width: 45%;
+}
+
+.narrow-header-button span:nth-of-type(1) {
+  top: 15px;
+}
+
+.narrow-header-button span:nth-of-type(2) {
+  top: 23px;
+}
+
+.narrow-header-button span:nth-of-type(3) {
+  top: 31px;
+}
+
+.narrow-header-body {
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: root.$background-color;
+  animation: opacity-transition 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+@keyframes opacity-transition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*activeクラスが付与されると線が回転して×に*/
+
+.narrow-header-button.active span:nth-of-type(1) {
+  top: 18px;
+  left: 18px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 30%;
+}
+
+.narrow-header-button.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.narrow-header-button.active span:nth-of-type(3) {
+  top: 30px;
+  left: 18px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 30%;
+}

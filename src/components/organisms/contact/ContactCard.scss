@@ -1,0 +1,96 @@
+@use "../../../root.scss" as root;
+
+.contact-card {
+  padding: 1vw;
+  background-color: root.$background-color;
+  margin: 0 auto;
+  z-index: 1;
+  position: relative;
+  margin-top: -5vh;
+  outline: 0.5px solid root.$text-primary;
+  width: fit-content;
+}
+
+.contact-contents {
+  width: 80vw;
+  outline: 1px dashed root.$text-accent;
+  outline-width: 1px;
+  @include root.desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: start;
+    padding: 10vh 5vw;
+  }
+  @include root.tablet {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 3rem;
+    padding: 5vh 3vw;
+  }
+  @include root.mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 3rem;
+    padding: 2vh 1vw;
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  @include root.desktop {
+    width: 80%;
+  }
+  @include root.tablet {
+    width: 70%;
+  }
+  @include root.desktop {
+    width: 50%;
+  }
+}
+
+.input-button {
+  margin: 0 auto;
+  background-color: root.$text-secondary;
+  border-radius: 8px;
+  padding: 0.8rem;
+  font-family: poppins-extralight, poppins, sans-serif;
+  text-align: center;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background-color: transparent;
+    outline: 1px solid root.$text-primary;
+    // border-width: 1px;
+    // outline: none;
+    border: none;
+    font-family: poppins-extralight, poppins, sans-serif;
+    text-align: center;
+    color: root.$text-primary;
+  }
+  &:active {
+    outline-width: 2px;
+  }
+}
+
+.contact-message {
+  @include root.desktop {
+    width: 40%;
+  }
+  @include root.tablet {
+    width: 70%;
+  }
+  @include root.mobile {
+    width: 70%;
+  }
+}

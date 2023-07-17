@@ -1,0 +1,53 @@
+@use "../../../root.scss" as root;
+
+.app-card {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background-color: root.$background-color;
+  box-sizing: border-box;
+  &:hover {
+    outline: 1px solid root.$text-accent;
+  }
+}
+
+.card-top {
+  width: 100%;
+  height: 40%;
+  box-shadow: 24px -32px 0 root.$shadow-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-photo-wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  // outline: 1px solid white;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#card-content-wrapper {
+  background-color: root.$background-color;
+  width: 100%;
+  height: 60%;
+  box-sizing: border-box;
+}
+
+#card-content {
+  padding: 16px 0 32px;
+  h6::after {
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 1em;
+    content: "";
+    border-bottom: 1px solid root.$text-accent;
+    width: 5rem;
+  }
+}
