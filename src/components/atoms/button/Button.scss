@@ -3,6 +3,7 @@
 .app-button {
   background-color: root.$text-secondary;
   border-radius: 8px;
+  border: none;
   @include root.mobile {
     height: 30px;
   }
@@ -17,28 +18,26 @@
   justify-content: center;
   align-items: center;
   padding: 1.2rem;
+  outline: 1px solid root.$grey;
   p {
     font-family: poppins-extralight, poppins, sans-serif;
     text-align: center;
     @include root.desktop {
       font-size: 16px;
-      font-weight: 350;
+      font-weight: 500;
     }
     @include root.tablet {
       font-size: 15px;
-      font-weight: 350;
+      font-weight: 500;
     }
     @include root.mobile {
       font-size: 14px;
-      font-weight: 350;
+      font-weight: 500;
     }
   }
   &:hover {
     background-color: root.$background-color;
-    outline: 1px solid root.$text-primary;
-    // border-width: 1px;
-    // outline: none;
-    border: none;
+    outline: 0.5px solid root.$text-primary;
     p {
       font-family: poppins-extralight, poppins, sans-serif;
       text-align: center;

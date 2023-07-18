@@ -68,6 +68,7 @@ header.downmove {
 }
 
 .narrow-header {
+  background-color: root.$background-color;
   @include root.desktop {
     display: none;
   }
