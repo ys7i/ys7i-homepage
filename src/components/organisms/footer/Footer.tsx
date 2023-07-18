@@ -43,7 +43,7 @@ export function Footer() {
       </div>
       <div>
         <p class="primary-dark" style={{ "font-size": "18px" }}>
-          &copy; 2023 Yuhi Sakaguchi. All Rights Reserve
+          &copy; 2023 Yuhi Sakaguchi. All Rights Reserved.
         </p>
       </div>
     </footer>
