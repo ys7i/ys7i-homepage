@@ -1,7 +1,5 @@
 import "./Header.scss";
 
-import { BiSolidCoinStack } from "solid-icons/bi";
-import { AppText } from "~/components/atoms/text/Text";
 import { createEffect, createSignal, onCleanup, Show } from "solid-js";
 import { Link } from "~/components/atoms/link/Link";
 import { AppSymbol } from "../symbol/Symbol";
