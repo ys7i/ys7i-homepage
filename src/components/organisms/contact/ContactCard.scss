@@ -60,6 +60,7 @@
 .input-button {
   background-color: root.$text-secondary;
   border-radius: 8px;
+  border: none;
   padding: 0.8rem;
   display: flex;
   justify-content: center;
@@ -71,6 +72,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: root.$background-color;
   &:hover {
     background-color: transparent;
     outline: 1px solid root.$text-primary;
