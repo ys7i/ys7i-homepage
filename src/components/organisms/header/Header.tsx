@@ -13,6 +13,7 @@ export function Header({ setOverFlowHidden }: HeaderProps) {
   const [isNarrowHeaderActive, setIsNarrowHeaderActive] = createSignal(false);
 
   const toggleHeaderButtonClass = () => {
+    console.log("called");
     setIsNarrowHeaderActive((sgnl) => !sgnl);
     setOverFlowHidden((item) => !item);
   };
@@ -66,22 +67,22 @@ export function Header({ setOverFlowHidden }: HeaderProps) {
             <Link
               text="Home"
               href="/"
-              onClick={() => setIsNarrowHeaderActive(false)}
+              onClick={() => toggleHeaderButtonClass()}
             />
             <Link
               text="About"
               href="/about"
-              onClick={() => setIsNarrowHeaderActive(false)}
+              onClick={() => toggleHeaderButtonClass()}
             />
             <Link
               text="Blog"
               href="/blog"
-              onClick={() => setIsNarrowHeaderActive(false)}
+              onClick={() => toggleHeaderButtonClass()}
             />
             <Link
               text="Contact"
               href="/contact"
-              onClick={() => setIsNarrowHeaderActive(false)}
+              onClick={() => toggleHeaderButtonClass()}
             />
           </div>
         </Show>
