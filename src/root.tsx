@@ -1,6 +1,6 @@
 import "./root.scss";
 
-import { createSignal, Suspense } from "solid-js";
+import { createSignal, Show, Suspense } from "solid-js";
 import { Footer } from "~/components/organisms/footer/Footer";
 import {
   Body,
@@ -11,6 +11,7 @@ import {
   Meta,
   Routes,
   Scripts,
+  useIsRouting,
 } from "solid-start";
 import "./root.scss";
 import { Header } from "./components/organisms/header/Header";
@@ -18,9 +19,11 @@ import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { isServer } from "solid-js/web";
 import { CustomMeta } from "./components/atoms/meta/Meta";
+import { CircleLoading } from "./components/atoms/loading/CircleLoading";
 
 export default function Root() {
   const [isOverflowHidden, setIsOverflowHidden] = createSignal(false);
+  const isRouting = useIsRouting();
   if (!isServer) {
     gsap.registerPlugin(ScrollTrigger);
   }
@@ -38,10 +41,12 @@ export default function Root() {
         <Suspense>
           <ErrorBoundary>
             <Header setOverFlowHidden={setIsOverflowHidden} />
-            <Routes>
-              <FileRoutes />
-            </Routes>
-            <Footer />
+            <Show when={!isRouting()} fallback={<CircleLoading />}>
+              <Routes>
+                <FileRoutes />
+              </Routes>
+              <Footer />
+            </Show>
           </ErrorBoundary>
         </Suspense>
         <Scripts />

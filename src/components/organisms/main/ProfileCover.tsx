@@ -39,7 +39,7 @@ export function ProfileCover() {
               <span class="box__line"></span>
               <span class="box__line"></span>
 
-              <AppText variant="h3" inputClass="accent" text="Yuhi Sakaguchi" />
+              <AppText variant="h5" inputClass="accent" text="Yuhi Sakaguchi" />
               <AppText
                 variant="p"
                 inputClass="dark-primary font-medium "
