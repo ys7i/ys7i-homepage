@@ -13,7 +13,6 @@ export default function Home() {
   const entries = useRouteData<typeof routeData>();
   return (
     <main>
-      <Title>ys7i.com</Title>
       <MainBody entries={entries} />
     </main>
   );

@@ -46,8 +46,8 @@
   justify-content: space-around;
   align-items: center;
   gap: 1rem;
-  @include root.desktop {
-    width: 80%;
+  @include root.mobile {
+    width: 90%;
   }
   @include root.tablet {
     width: 70%;
@@ -58,10 +58,13 @@
 }
 
 .input-button {
-  margin: 0 auto;
   background-color: root.$text-secondary;
   border-radius: 8px;
   padding: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: 1px solid root.$grey;
   font-family: poppins-extralight, poppins, sans-serif;
   text-align: center;
   font-size: 1.2rem;

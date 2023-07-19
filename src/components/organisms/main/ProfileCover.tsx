@@ -4,7 +4,7 @@ import "./ProfileCover.scss";
 import { AppText } from "~/components/atoms/text/Text";
 import { AppButton } from "~/components/atoms/button/Button";
 import { TypedText } from "~/components/atoms/text/TypedText";
-import { useNavigate } from "solid-start";
+import { Meta, useNavigate } from "solid-start";
 
 export function ProfileCover() {
   const navigation = useNavigate();

@@ -6,7 +6,6 @@ import {
   onCleanup,
 } from "solid-js";
 import { AppImage } from "~/components/atoms/image/Image";
-import { CustomMeta } from "~/components/atoms/meta/Meta";
 import "./CoverBackground.scss";
 
 interface CoverBackgroundProps {
