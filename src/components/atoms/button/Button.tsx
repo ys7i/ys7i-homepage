@@ -3,12 +3,17 @@ import "./Button.scss";
 
 interface ButtonProps {
   text: string;
-  onClick: () => void;
+  onClick?: () => void;
+  type?: "submit" | "button";
 }
 
-export function AppButton({ text, onClick }: ButtonProps) {
+export function AppButton({
+  text,
+  onClick = () => {},
+  type = "button",
+}: ButtonProps) {
   return (
-    <button class="app-button" onClick={onClick}>
+    <button class="app-button" onClick={onClick} type={type}>
       <p>{text}</p>
     </button>
   );

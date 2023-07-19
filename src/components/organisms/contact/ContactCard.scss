@@ -57,37 +57,6 @@
   }
 }
 
-.input-button {
-  background-color: root.$text-secondary;
-  border-radius: 8px;
-  border: none;
-  padding: 0.8rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  outline: 1px solid root.$grey;
-  font-family: poppins-extralight, poppins, sans-serif;
-  text-align: center;
-  font-size: 1.2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: root.$background-color;
-  &:hover {
-    background-color: transparent;
-    outline: 1px solid root.$text-primary;
-    // border-width: 1px;
-    // outline: none;
-    border: none;
-    font-family: poppins-extralight, poppins, sans-serif;
-    text-align: center;
-    color: root.$text-primary;
-  }
-  &:active {
-    outline-width: 2px;
-  }
-}
-
 .contact-message {
   @include root.desktop {
     width: 40%;

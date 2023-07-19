@@ -7,6 +7,7 @@ import { AppText } from "~/components/atoms/text/Text";
 import { Textfield } from "~/components/molecules/text-field/Textfield";
 import "./ContactCard.scss";
 import { Orbit3dLoading } from "~/components/atoms/loading/Orbit3dLoading";
+import { AppButton } from "~/components/atoms/button/Button";
 
 export default function ContactCard() {
   const [result, { Form }] = createServerAction$(async (formData: FormData) => {
@@ -89,7 +90,7 @@ export default function ContactCard() {
             isRequired={true}
             placeholder="Your message"
           />
-          <input type="submit" value="submit" class="input-button" />
+          <AppButton type="submit" text="submit" />
         </Form>
       </div>
     </div>
