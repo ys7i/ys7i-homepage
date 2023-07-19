@@ -85,7 +85,8 @@ export function ScrollAbout({ skills }: ScrollAboutProps) {
               transform: "translateY(100vh)",
               delay: 0.5,
             })
-            .to(frontRef, { transform: "translateY(-100vh)" }, "<");
+            .to(frontRef, { transform: "translateY(-100vh)" }, "<")
+            .to(frontRef, { delay: 0.2 });
         }
       }
     );
