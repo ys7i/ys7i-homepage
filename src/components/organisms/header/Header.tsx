@@ -3,6 +3,9 @@ import "./Header.scss";
 import { createEffect, createSignal, onCleanup, Show } from "solid-js";
 import { Link } from "~/components/atoms/link/Link";
 import { AppSymbol } from "../symbol/Symbol";
+import { AppButton } from "~/components/atoms/button/Button";
+import { useScopedI18n } from "@solid-primitives/i18n";
+import { I18nLnDict } from "~/i18n/type";
 
 interface HeaderProps {
   setOverFlowHidden: (fn: (value: boolean) => boolean) => void;
@@ -11,9 +14,9 @@ interface HeaderProps {
 export function Header({ setOverFlowHidden }: HeaderProps) {
   const [scrollPosition, setScrollPosition] = createSignal(0);
   const [isNarrowHeaderActive, setIsNarrowHeaderActive] = createSignal(false);
+  const [t, { locale }] = useScopedI18n<I18nLnDict["header"], string>("header");
 
   const toggleHeaderButtonClass = () => {
-    console.log("called");
     setIsNarrowHeaderActive((sgnl) => !sgnl);
     setOverFlowHidden((item) => !item);
   };
@@ -41,10 +44,18 @@ export function Header({ setOverFlowHidden }: HeaderProps) {
           <AppSymbol iconColorSecondary={false} />
         </div>
         <div class="header-link">
-          <Link text="Home" href="/" />
+          <Link text={t("home")} href="/" />
           <Link text="About" href="/about" />
           <Link text="Blog" href="/blog" />
           <Link text="Contact" href="/contact" />
+          <p style={{ color: "white" }}>{t("home")}</p>
+          <AppButton
+            text="language"
+            onClick={() => {
+              console.log(t("home"));
+              console.log(locale("jp"));
+            }}
+          />
         </div>
       </div>
       <div class="narrow-header">

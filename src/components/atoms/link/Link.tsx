@@ -1,6 +1,7 @@
 import "./Link.scss";
 
 import { A, useIsRouting, useLocation } from "solid-start";
+import { children } from "solid-js";
 
 interface LinkProps {
   text: string;
@@ -11,6 +12,7 @@ interface LinkProps {
 export function Link({ text, href, onClick = () => {} }: LinkProps) {
   // const isRouting = useIsRouting();
   const location = useLocation();
+  const t = children(() => text);
   return (
     <A
       href={href}
@@ -21,7 +23,7 @@ export function Link({ text, href, onClick = () => {} }: LinkProps) {
       }}
       onClick={onClick}
     >
-      {text}
+      {t()}
     </A>
   );
 }

@@ -11,6 +11,9 @@ dependencies:
   '@aws-sdk/credential-provider-env':
     specifier: ^3.370.0
     version: 3.370.0
+  '@solid-primitives/i18n':
+    specifier: ^1.4.0
+    version: 1.4.0(solid-js@1.7.2)
   '@solidjs/meta':
     specifier: ^0.28.2
     version: 0.28.2(solid-js@1.7.2)
@@ -53,6 +56,9 @@ dependencies:
   solid-start:
     specifier: ^0.2.26
     version: 0.2.26(@solidjs/meta@0.28.2)(@solidjs/router@0.8.2)(solid-js@1.7.2)(solid-start-node@0.2.19)(solid-start-vercel@0.2.26)(vite@4.1.4)
+  svg-country-flags:
+    specifier: ^1.2.10
+    version: 1.2.10
   swiper:
     specifier: ^10.0.3
     version: 10.0.3
@@ -2572,6 +2578,23 @@ packages:
       tslib: 2.6.0
     dev: false
 
+  /@solid-primitives/context@0.2.1(solid-js@1.7.2):
+    resolution: {integrity: sha512-XIIwCOWpRKDersgkR9LNFXaJHIV8QlCFo/tq5bV0cAOZklcwOFcqi2bN+uWgEIQSWGjWXU2kc1H1/TzgYzVDlg==}
+    peerDependencies:
+      solid-js: ^1.6.12
+    dependencies:
+      solid-js: 1.7.2
+    dev: false
+
+  /@solid-primitives/i18n@1.4.0(solid-js@1.7.2):
+    resolution: {integrity: sha512-jKNa9cl9JFnJdYMh8cQUDb8n89Qc6UTJS9Q0DBjx04du86cv9OOCqnbc+xIKJy+QHV7MfBf7KFDdg3sSGwLstA==}
+    peerDependencies:
+      solid-js: ^1.6.12
+    dependencies:
+      '@solid-primitives/context': 0.2.1(solid-js@1.7.2)
+      solid-js: 1.7.2
+    dev: false
+
   /@solidjs/meta@0.28.2(solid-js@1.7.2):
     resolution: {integrity: sha512-avlLgBPdk4KVxzRGFlYp/MIJo8B5jVgXPgk6OUnUP8km21Z+ovO+DUd7ZPA7ejv8PBdWi9GE3zCzw8RU2YuV2Q==}
     peerDependencies:
@@ -4525,6 +4548,10 @@ packages:
   /supports-preserve-symlinks-flag@1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+
+  /svg-country-flags@1.2.10:
+    resolution: {integrity: sha512-xrqwo0TYf/h2cfPvGpjdSuSguUbri4vNNizBnwzoZnX0xGo3O5nGJMlbYEp7NOYcnPGBm6LE2axqDWSB847bLw==}
+    dev: false
 
   /swiper@10.0.3:
     resolution: {integrity: sha512-jpsUDo+EmNq7N59vRCo5aDZXLF8EfWJWlTdm1jkqEH+ph8DuMTJuLjcNunN8Q88bqVxo6vceYBGIrpRIwrEGcA==}
