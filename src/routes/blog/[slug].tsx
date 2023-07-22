@@ -1,5 +1,5 @@
 import { createResource, Show } from "solid-js";
-import { Meta, Title, useRouteData } from "solid-start";
+import { createRouteData, Meta, Title, useRouteData } from "solid-start";
 import { createServerData$ } from "solid-start/server";
 import { getBlogEntry } from "~/api/contentful";
 import { CircleLoading } from "~/components/atoms/loading/CircleLoading";
@@ -8,7 +8,7 @@ import { BlogDetail } from "~/components/template/blog/BlogDetail";
 type RouteDataProps = { params: { slug: string } };
 
 export function routeData({ params: { slug } }: RouteDataProps) {
-  return createServerData$(
+  return createRouteData(
     ([slug]) => {
       return getBlogEntry(slug);
     },
