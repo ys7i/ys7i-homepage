@@ -1,6 +1,8 @@
 import contentful, { Entry, EntrySys, OrderFilterPaths } from "contentful";
 import { Resource } from "solid-js";
 
+let blogs: BlogPost[];
+
 async function fetchTags() {
   const client = contentful.createClient({
     space: process.env.CONTENTFUL_SPACE_ID ?? "",
@@ -12,6 +14,10 @@ async function fetchTags() {
 }
 
 export async function getBlogEntry(id: string) {
+  const blog = (blogs ?? []).find((b) => b.id === id);
+  if (blog) {
+    return blog;
+  }
   const client = contentful.createClient({
     space: process.env.CONTENTFUL_SPACE_ID ?? "",
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN ?? "",
@@ -30,6 +36,9 @@ export async function getBlogEntry(id: string) {
 }
 
 export async function getBlogEntries(skip: number = 0, limit?: number) {
+  if (blogs?.length) {
+    return blogs;
+  }
   const client = contentful.createClient({
     space: process.env.CONTENTFUL_SPACE_ID ?? "",
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN ?? "",
@@ -45,7 +54,7 @@ export async function getBlogEntries(skip: number = 0, limit?: number) {
     fetchTags(),
   ]);
 
-  return entries.items.map((item) => {
+  blogs = entries.items.map((item) => {
     const tagIds = item.metadata.tags.map((tag) => tag.sys.id);
     return {
       ...item.fields,
@@ -57,6 +66,7 @@ export async function getBlogEntries(skip: number = 0, limit?: number) {
       summary: item.fields.summary_,
     };
   }) as unknown as BlogPost[];
+  return blogs;
 }
 
 export async function getSkillEntries(skip: number = 0, limit?: number) {
