@@ -14,25 +14,29 @@ async function fetchTags() {
 }
 
 export async function getBlogEntry(id: string) {
-  const blog = (blogs ?? []).find((b) => b.id === id);
-  if (blog) {
-    return blog;
+  try {
+    const blog = (blogs ?? []).find((b) => b.id === id);
+    if (blog) {
+      return blog;
+    }
+    const client = contentful.createClient({
+      space: process.env.CONTENTFUL_SPACE_ID ?? "",
+      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN ?? "",
+    });
+    const [entry, tags] = await Promise.all([client.getEntry(id), fetchTags()]);
+    const tagIds = entry.metadata.tags.map((tag) => tag.sys.id);
+    return {
+      ...entry.fields,
+      summary: entry.fields.summary_,
+      createdAt: entry.sys.createdAt,
+      tags: tags
+        .filter((tag) => tagIds.includes(tag.sys.id))
+        .map((tag) => tag.name),
+      id: entry.sys.id,
+    } as unknown as BlogPost;
+  } catch {
+    return null;
   }
-  const client = contentful.createClient({
-    space: process.env.CONTENTFUL_SPACE_ID ?? "",
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN ?? "",
-  });
-  const [entry, tags] = await Promise.all([client.getEntry(id), fetchTags()]);
-  const tagIds = entry.metadata.tags.map((tag) => tag.sys.id);
-  return {
-    ...entry.fields,
-    summary: entry.fields.summary_,
-    createdAt: entry.sys.createdAt,
-    tags: tags
-      .filter((tag) => tagIds.includes(tag.sys.id))
-      .map((tag) => tag.name),
-    id: entry.sys.id,
-  } as unknown as BlogPost;
 }
 
 export async function getBlogEntries(skip: number = 0, limit?: number) {
