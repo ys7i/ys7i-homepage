@@ -140,6 +140,9 @@ hr {
 
   img {
     object-fit: contain;
+    height: 100%;
+    max-width: 100%;
+    object-position: 0 0;
   }
 
   a {

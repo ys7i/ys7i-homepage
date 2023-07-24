@@ -1,6 +1,5 @@
 import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
 import { createServerAction$, redirect } from "solid-start/server";
-import { Match, Switch } from "solid-js";
 import { fromEnv } from "@aws-sdk/credential-provider-env";
 
 import { AppText } from "~/components/atoms/text/Text";
@@ -11,7 +10,7 @@ import { AppButton } from "~/components/atoms/button/Button";
 
 export default function ContactCard() {
   const [result, { Form }] = createServerAction$(async (formData: FormData) => {
-    const region = process.env.AWS_REGION;
+    const region = import.meta.env.AWS_REGION;
     const sesClient = new SESClient({
       region,
       credentials: fromEnv(),
@@ -20,7 +19,7 @@ export default function ContactCard() {
     const createSendEmailCommand = (subject: string, body: string) => {
       const params = {
         Destination: {
-          ToAddresses: [process.env.TO_MAIL ?? ""],
+          ToAddresses: [import.meta.env.VITE_TO_MAIL ?? ""],
         },
         Message: {
           Body: {
@@ -34,7 +33,7 @@ export default function ContactCard() {
             Data: subject,
           },
         },
-        Source: process.env.FROM_MAIL,
+        Source: import.meta.env.FROM_MAIL,
       };
       return new SendEmailCommand(params);
     };
