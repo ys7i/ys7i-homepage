@@ -7,12 +7,12 @@ import { BlogDetail } from "~/components/template/blog/BlogDetail";
 
 type RouteDataProps = { params: { slug: string } };
 
-export function routeData({ params: { slug } }: RouteDataProps) {
-  return createRouteData(
+export function routeData(props: RouteDataProps) {
+  return createServerData$(
     ([slug]) => {
       return getBlogEntry(slug);
     },
-    { key: () => [slug] }
+    { key: () => [props.params.slug] }
   );
 }
 
