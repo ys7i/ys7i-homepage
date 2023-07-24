@@ -11,13 +11,9 @@ export function routeData(props: RouteDataProps) {
   return createServerData$(
     async ([slug]) => {
       // 前のデータが引き継がれるのでretry
-      console.log(slug);
       const data = await getBlogEntry(slug);
-      if (data.id === slug) {
-        return data;
-      } else {
-        return getBlogEntry(slug);
-      }
+      data.id = slug;
+      return data;
     },
     { key: () => [props.params.slug] }
   );
@@ -28,6 +24,7 @@ export default function Home() {
   return (
     <main style={{ "margin-bottom": "-10vh" }}>
       <Title>{entry()?.title}</Title>
+      <p style={{ color: "white" }}>{entry()?.id}</p>
       <Meta
         property="og:image"
         content={`https:${entry()?.photo.fields.file.url}`}
