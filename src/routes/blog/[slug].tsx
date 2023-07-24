@@ -9,8 +9,14 @@ type RouteDataProps = { params: { slug: string } };
 
 export function routeData(props: RouteDataProps) {
   return createServerData$(
-    ([slug]) => {
-      return getBlogEntry(slug);
+    async ([slug]) => {
+      // 前のデータが引き継がれるのでretry
+      const data = await getBlogEntry(slug);
+      if (data.id === slug) {
+        return data;
+      } else {
+        return getBlogEntry(slug);
+      }
     },
     { key: () => [props.params.slug] }
   );
