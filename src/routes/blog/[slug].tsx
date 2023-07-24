@@ -1,5 +1,5 @@
-import { Show } from "solid-js";
-import { Meta, Title, useRouteData } from "solid-start";
+import { createEffect, Show } from "solid-js";
+import { Meta, Title, useParams, useRouteData } from "solid-start";
 import { getBlogEntry } from "~/api/contentful";
 import { CircleLoading } from "~/components/atoms/loading/CircleLoading";
 import { BlogDetail } from "~/components/template/blog/BlogDetail";
@@ -18,6 +18,13 @@ export function routeData(props: RouteDataProps) {
 
 export default function Home() {
   const entry = useRouteData<typeof routeData>();
+  const params = useParams<{ slug: string }>();
+
+  createEffect(() => {
+    if (entry()?.id && entry()?.id !== params.slug) {
+      location.reload();
+    }
+  }, []);
   return (
     <main style={{ "margin-bottom": "-10vh" }}>
       <Title>{entry()?.title}</Title>
