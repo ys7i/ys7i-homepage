@@ -1,7 +1,5 @@
-import contentful, { Entry, EntrySys, OrderFilterPaths } from "contentful";
+import contentful from "contentful";
 import { Resource } from "solid-js";
-
-let blogs: BlogPost[];
 
 async function fetchTags() {
   const client = contentful.createClient({
@@ -14,11 +12,6 @@ async function fetchTags() {
 }
 
 export async function getBlogEntry(id: string) {
-  // try {
-  const blog = (blogs ?? []).find((b) => b.id === id);
-  if (blog) {
-    return blog;
-  }
   const client = contentful.createClient({
     space: import.meta.env.VITE_CONTENTFUL_SPACE_ID ?? "",
     accessToken: import.meta.env.VITE_CONTENTFUL_ACCESS_TOKEN ?? "",
@@ -34,15 +27,9 @@ export async function getBlogEntry(id: string) {
       .map((tag) => tag.name),
     id: entry.sys.id,
   } as unknown as BlogPost;
-  // } catch {
-  //   return null;
-  // }
 }
 
 export async function getBlogEntries(skip: number = 0, limit?: number) {
-  if (blogs?.length) {
-    return blogs;
-  }
   const client = contentful.createClient({
     space: import.meta.env.VITE_CONTENTFUL_SPACE_ID ?? "",
     accessToken: import.meta.env.VITE_CONTENTFUL_ACCESS_TOKEN ?? "",
@@ -58,7 +45,7 @@ export async function getBlogEntries(skip: number = 0, limit?: number) {
     fetchTags(),
   ]);
 
-  blogs = entries.items.map((item) => {
+  return entries.items.map((item) => {
     const tagIds = item.metadata.tags.map((tag) => tag.sys.id);
     return {
       ...item.fields,
@@ -70,7 +57,6 @@ export async function getBlogEntries(skip: number = 0, limit?: number) {
       summary: item.fields.summary_,
     };
   }) as unknown as BlogPost[];
-  return blogs;
 }
 
 export async function getSkillEntries(skip: number = 0, limit?: number) {

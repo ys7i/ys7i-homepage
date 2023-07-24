@@ -1,21 +1,18 @@
-import { createResource, Show } from "solid-js";
-import { createRouteData, Meta, Title, useRouteData } from "solid-start";
-import { createServerData$ } from "solid-start/server";
+import { Show } from "solid-js";
+import { Meta, Title, useRouteData } from "solid-start";
 import { getBlogEntry } from "~/api/contentful";
 import { CircleLoading } from "~/components/atoms/loading/CircleLoading";
 import { BlogDetail } from "~/components/template/blog/BlogDetail";
+import { createServerData$ } from "solid-start/server";
 
 type RouteDataProps = { params: { slug: string } };
 
 export function routeData(props: RouteDataProps) {
   return createServerData$(
-    async ([slug]) => {
-      // 前のデータが引き継がれるのでretry
-      const data = await getBlogEntry(slug);
-      data.id = slug;
-      return data;
+    async ([, slug]) => {
+      return await getBlogEntry(slug);
     },
-    { key: () => [props.params.slug] }
+    { key: () => ["slug", props.params.slug] }
   );
 }
 
@@ -24,7 +21,6 @@ export default function Home() {
   return (
     <main style={{ "margin-bottom": "-10vh" }}>
       <Title>{entry()?.title}</Title>
-      <p style={{ color: "white" }}>{entry()?.id}</p>
       <Meta
         property="og:image"
         content={`https:${entry()?.photo.fields.file.url}`}
