@@ -11,6 +11,7 @@ export function routeData(props: RouteDataProps) {
   return createServerData$(
     async ([slug]) => {
       // 前のデータが引き継がれるのでretry
+      console.log(slug);
       const data = await getBlogEntry(slug);
       if (data.id === slug) {
         return data;
