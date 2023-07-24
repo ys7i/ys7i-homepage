@@ -27,7 +27,6 @@ export default function Home() {
   }, []);
   return (
     <main style={{ "margin-bottom": "-10vh" }}>
-      <Title>{entry()?.title}</Title>
       <Meta
         property="og:image"
         content={`https:${entry()?.photo.fields.file.url}`}
@@ -37,7 +36,11 @@ export default function Home() {
         property="og:description"
         content={entry()?.summary}
       />
-      <Show when={Boolean(entry())} fallback={<CircleLoading />}>
+      <Show
+        when={entry() && entry()?.id === params.slug}
+        fallback={<CircleLoading />}
+      >
+        <Title>{entry()?.title}</Title>
         <BlogDetail content={entry() ?? null} />
       </Show>
     </main>
