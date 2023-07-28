@@ -1,18 +1,17 @@
 import "./Link.scss";
 
-import { A, useIsRouting, useLocation } from "solid-start";
-import { children } from "solid-js";
+import { A, useLocation } from "solid-start";
+import { useI18n } from "@solid-primitives/i18n";
 
 interface LinkProps {
-  text: string;
+  key: string;
   href: string;
   onClick?: () => void;
 }
 
-export function Link({ text, href, onClick = () => {} }: LinkProps) {
-  // const isRouting = useIsRouting();
+export function Link({ key, href, onClick = () => {} }: LinkProps) {
+  const [t] = useI18n();
   const location = useLocation();
-  const t = children(() => text);
   return (
     <A
       href={href}
@@ -23,7 +22,7 @@ export function Link({ text, href, onClick = () => {} }: LinkProps) {
       }}
       onClick={onClick}
     >
-      {t()}
+      {t(key)}
     </A>
   );
 }

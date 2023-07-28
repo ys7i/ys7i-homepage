@@ -27,7 +27,10 @@ export function Submitted() {
             />
           </div>
           <div class="button-wrapper">
-            <AppButton text="Back to home" onClick={() => navigation("/")} />
+            <AppButton
+              key="contact.submitted.backToHome"
+              onClick={() => navigation("/")}
+            />
           </div>
         </div>
       </CoverBackground>

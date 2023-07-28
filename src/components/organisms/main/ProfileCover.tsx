@@ -11,10 +11,7 @@ export function ProfileCover() {
   return (
     <section class="profile-section">
       <div class="profile-left-section">
-        <AppImage
-          src="/backgrounds/profile-cover.jpg"
-          objectFit="cover"
-        ></AppImage>
+        <AppImage src="/backgrounds/profile-cover.jpg" objectFit="contain" />
       </div>
       <div class="profile-right-section"></div>
       <div class="profile-box">
@@ -28,7 +25,7 @@ export function ProfileCover() {
           <div class="profile-photo-section">
             <AppImage
               src="/profile/me.jpg"
-              objectFit="contain"
+              objectFit={null}
               inputClass="round-image"
             />
           </div>
@@ -53,7 +50,7 @@ export function ProfileCover() {
                 }
               />
             </div>
-            <AppButton text="Detail" onClick={() => navigation("/about")} />
+            <AppButton key="top.detail" onClick={() => navigation("/about")} />
           </div>
         </div>
       </div>

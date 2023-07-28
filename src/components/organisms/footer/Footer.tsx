@@ -17,10 +17,10 @@ export function Footer() {
           <AppSymbol />
         </div>
         <div class="footer-sitemap column-flex margin-top">
-          <Link text="Home" href="/" />
-          <Link text="About" href="/about" />
-          <Link text="Blog" href="/blog" />
-          <Link text="Contact" href="/contact" />
+          <Link key="header.home" href="/" />
+          <Link key="header.about" href="/about" />
+          <Link key="header.blog" href="/blog" />
+          <Link key="header.contact" href="/contact" />
         </div>
         <div class="icon-links">
           <AppText variant="p" text="Follow me on:" inputClass="primary-dark" />

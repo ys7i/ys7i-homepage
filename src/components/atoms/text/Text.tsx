@@ -1,5 +1,6 @@
 import "./Text.scss";
-import { JSX, Match, Switch } from "solid-js";
+import { JSX, Match, Show, Switch } from "solid-js";
+import { useI18n } from "@solid-primitives/i18n";
 
 interface TextProps {
   variant: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "caption";
@@ -34,5 +35,19 @@ export function AppText({ variant, text, inputClass = "primary" }: TextProps) {
         </p>
       </Match>
     </Switch>
+  );
+}
+
+type TranslatableTextProps = {
+  text?: string;
+  translationKey?: string;
+};
+
+function TranslatableText({ text, translationKey }: TranslatableTextProps) {
+  const [t] = useI18n();
+  return (
+    <Show when={translationKey} fallback={text ?? ""}>
+      {t(translationKey ?? "")}
+    </Show>
   );
 }
