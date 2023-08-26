@@ -24,6 +24,10 @@ export const jpDict: I18nLnDict = {
       "お気軽に問い合わせページからメッセージをお送りください",
     ],
   },
+  notfound: {
+    title: "404",
+    message: "申し訳ありません。お探しのページが見つかりませんでした。",
+  },
   contact: {
     submitted: {
       thanksMessage: [

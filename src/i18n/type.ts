@@ -28,6 +28,10 @@ export type I18nLnDict = DeepReadonly<{
   about: {
     encourageContact: string[];
   };
+  notfound: {
+    title: string;
+    message: string;
+  };
   contact: {
     submitted: {
       thanksMessage: string[];
