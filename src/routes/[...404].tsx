@@ -10,7 +10,7 @@ export default function NotFound() {
       <Title>Not Found</Title>
       <HttpStatusCode code={404} />
       <TranslatableText
-        variant="h1"
+        variant="h3"
         translationKey="notfound.title"
         inputClass="primary"
       />
@@ -21,11 +21,13 @@ export default function NotFound() {
           inputClass="round-image"
         />
       </div>
-      <TranslatableText
-        variant="h5"
-        translationKey="notfound.message"
-        inputClass="primary"
-      />
+      <div id="notfound-message">
+        <TranslatableText
+          variant="h5"
+          translationKey="notfound.message"
+          inputClass="primary"
+        />
+      </div>
     </main>
   );
 }
