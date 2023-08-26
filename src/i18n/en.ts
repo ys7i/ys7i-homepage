@@ -2,7 +2,7 @@ import { I18nLnDict } from "./type";
 
 export const enDict: I18nLnDict = {
   common: {
-    name: "Yuhi Sakaguci",
+    name: "Yuhi Sakaguchi",
   },
   header: {
     home: "HOME",
@@ -20,7 +20,7 @@ export const enDict: I18nLnDict = {
     detail: "Detail",
   },
   about: {
-    encourageContact: "Please contact me through the Contact page.",
+    encourageContact: ["Please contact me through the Contact page."],
   },
   contact: {
     submitted: {
@@ -43,6 +43,6 @@ export const enDict: I18nLnDict = {
     },
   },
   footer: {
-    followMeOn: "SNS",
+    followMeOn: "Follow Me On:",
   },
 } as const;

@@ -2,7 +2,7 @@ import "./Footer.scss";
 
 import { Link } from "~/components/atoms/link/Link";
 import { AppSymbol } from "../symbol/Symbol";
-import { AppText } from "~/components/atoms/text/Text";
+import { AppText, TranslatableText } from "~/components/atoms/text/Text";
 import { IconLink } from "~/components/atoms/link/IconLink";
 import { AiFillTwitterCircle } from "solid-icons/ai";
 import { AiFillLinkedin } from "solid-icons/ai";
@@ -23,7 +23,11 @@ export function Footer() {
           <Link key="header.contact" href="/contact" />
         </div>
         <div class="icon-links">
-          <AppText variant="p" text="Follow me on:" inputClass="primary-dark" />
+          <TranslatableText
+            variant="p"
+            translationKey="footer.followMeOn"
+            inputClass="dark-primary"
+          />
           <div class="row-flex">
             <IconLink
               icon={<AiFillTwitterCircle />}

@@ -2,7 +2,7 @@ import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
 import { createServerAction$, redirect } from "solid-start/server";
 import { fromEnv } from "@aws-sdk/credential-provider-env";
 
-import { AppText } from "~/components/atoms/text/Text";
+import { AppText, TranslatableText } from "~/components/atoms/text/Text";
 import { Textfield } from "~/components/molecules/text-field/Textfield";
 import "./ContactCard.scss";
 import { Orbit3dLoading } from "~/components/atoms/loading/Orbit3dLoading";
@@ -11,10 +11,6 @@ import { AppButton } from "~/components/atoms/button/Button";
 export default function ContactCard() {
   const [result, { Form }] = createServerAction$(async (formData: FormData) => {
     const region = import.meta.env.AWS_REGION;
-    const sesClient = new SESClient({
-      region,
-      credentials: fromEnv(),
-    });
 
     const createSendEmailCommand = (subject: string, body: string) => {
       const params = {
@@ -48,6 +44,7 @@ export default function ContactCard() {
     try {
       const sesClient = new SESClient({
         region,
+        credentials: fromEnv(),
       });
 
       await sesClient.send(sendEmailCommand);
@@ -61,35 +58,37 @@ export default function ContactCard() {
     <div class="contact-card">
       <div class="contact-contents primary">
         <div class="contact-message">
-          <AppText
+          <TranslatableText
             variant="p"
             inputClass="text-align-center accent font-medium"
-            text={<>Please feel free to contact me! {result.result}</>}
-          />
-          <AppText
-            variant="p"
-            inputClass="text-align-center accent font-medium"
-            text={
-              <>
-                I will respond to inquiries that are eligible for a reply within
-                5 days.
-              </>
-            }
+            translationKey="contact.encourageContact"
           />
           <Orbit3dLoading />
         </div>
 
         <Form class="contact-form">
-          <Textfield placeholder="Your name" id="name" isRequired={true} />
-          <Textfield id="email" isRequired={true} placeholder="Your email" />
-          <Textfield placeholder="Subject" id="subject" isRequired={true} />
+          <Textfield
+            placeholder="contact.form.name"
+            id="name"
+            isRequired={true}
+          />
+          <Textfield
+            id="email"
+            isRequired={true}
+            placeholder="contact.form.email"
+          />
+          <Textfield
+            placeholder="contact.form.subject"
+            id="subject"
+            isRequired={true}
+          />
           <Textfield
             isTextArea={true}
             id="message"
             isRequired={true}
-            placeholder="Your message"
+            placeholder="contact.form.message"
           />
-          <AppButton type="submit" text="submit" />
+          <AppButton type="submit" key="contact.form.submit" />
         </Form>
       </div>
     </div>

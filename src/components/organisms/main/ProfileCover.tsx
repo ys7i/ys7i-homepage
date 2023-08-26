@@ -1,7 +1,7 @@
 import { AppImage } from "~/components/atoms/image/Image";
 import "./ProfileCover.scss";
 
-import { AppText } from "~/components/atoms/text/Text";
+import { AppText, TranslatableText } from "~/components/atoms/text/Text";
 import { AppButton } from "~/components/atoms/button/Button";
 import { TypedText } from "~/components/atoms/text/TypedText";
 import { Meta, useNavigate } from "solid-start";
@@ -36,18 +36,15 @@ export function ProfileCover() {
               <span class="box__line"></span>
               <span class="box__line"></span>
 
-              <AppText variant="h5" inputClass="accent" text="Yuhi Sakaguchi" />
-              <AppText
+              <TranslatableText
+                variant="h5"
+                inputClass="accent"
+                translationKey="common.name"
+              />
+              <TranslatableText
                 variant="p"
-                inputClass="dark-primary font-medium "
-                text={
-                  <>
-                    Thank you for visiting my website. <br />I am a graduate
-                    student and freelance software engineer. <br />I have
-                    experience in both front-end and back-end development, and I
-                    excel at adapting to a wide range of technologies.
-                  </>
-                }
+                inputClass="dark-primary font-medium"
+                translationKey="top.selfIntroduction"
               />
             </div>
             <AppButton key="top.detail" onClick={() => navigation("/about")} />

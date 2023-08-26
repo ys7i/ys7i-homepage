@@ -1,10 +1,12 @@
 import "./Header.scss";
-
 import { createEffect, createSignal, onCleanup, Show } from "solid-js";
+
 import { Link } from "~/components/atoms/link/Link";
 import { AppSymbol } from "../symbol/Symbol";
-import { AppButton } from "~/components/atoms/button/Button";
-import { useI18n, useScopedI18n } from "@solid-primitives/i18n";
+
+import { useI18n } from "@solid-primitives/i18n";
+import { Select } from "~/components/atoms/selector/Select";
+import { Radio } from "~/components/atoms/radio/Radio";
 
 interface HeaderProps {
   setOverFlowHidden: (fn: (value: boolean) => boolean) => void;
@@ -13,7 +15,7 @@ interface HeaderProps {
 export function Header({ setOverFlowHidden }: HeaderProps) {
   const [scrollPosition, setScrollPosition] = createSignal(0);
   const [isNarrowHeaderActive, setIsNarrowHeaderActive] = createSignal(false);
-  const [t, { locale }] = useI18n();
+  const [t, { locale, dict }] = useI18n();
 
   const toggleHeaderButtonClass = () => {
     setIsNarrowHeaderActive((sgnl) => !sgnl);
@@ -47,14 +49,16 @@ export function Header({ setOverFlowHidden }: HeaderProps) {
           <Link key="header.about" href="/about" />
           <Link key="header.blog" href="/blog" />
           <Link key="header.contact" href="/contact" />
-          <button
-            onClick={() => {
-              console.log(t("header.home"));
-              console.log(locale("jp"));
+          <Select
+            value={locale()}
+            onChange={(option) => {
+              locale(option);
             }}
-          >
-            language
-          </button>
+            options={[
+              { id: "jp", title: "日本語" },
+              { id: "en", title: "English" },
+            ]}
+          />
         </div>
       </div>
       <div class="narrow-header">
@@ -94,6 +98,19 @@ export function Header({ setOverFlowHidden }: HeaderProps) {
               href="/contact"
               onClick={() => toggleHeaderButtonClass()}
             />
+            <div>
+              <Radio
+                title="Language"
+                value={locale}
+                onChange={(option) => {
+                  locale(option);
+                }}
+                options={[
+                  { id: "jp", title: "日本語" },
+                  { id: "en", title: "English" },
+                ]}
+              />
+            </div>
           </div>
         </Show>
       </div>

@@ -20,14 +20,16 @@ export const jpDict: I18nLnDict = {
     detail: "詳細",
   },
   about: {
-    encourageContact:
-      "ご質問やご要望がありましたら、お気軽に問い合わせページからメッセージをお送りください",
+    encourageContact: [
+      "ご質問やご要望がありましたら",
+      "お気軽に問い合わせページからメッセージをお送りください",
+    ],
   },
   contact: {
     submitted: {
       thanksMessage: [
         "お問い合わせありがとうございます。",
-        "返信可能なものに関しましては, 5日以内にご連絡指し上げます。",
+        "返信可能なものに関しましては5日以内にご連絡差し上げます。",
       ],
       backToHome: "ホームへ",
     },
@@ -44,6 +46,6 @@ export const jpDict: I18nLnDict = {
     },
   },
   footer: {
-    followMeOn: "SNS",
+    followMeOn: "",
   },
 } as const;

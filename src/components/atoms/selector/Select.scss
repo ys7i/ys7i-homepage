@@ -1,0 +1,11 @@
+@use "../../../root.scss" as root;
+
+.cp_ipselect {
+  select {
+    background-color: root.$background-color;
+    color: root.$text-primary;
+    padding: 5px;
+    outline: none;
+    border: none;
+  }
+}

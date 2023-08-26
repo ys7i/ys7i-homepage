@@ -26,7 +26,7 @@ export type I18nLnDict = DeepReadonly<{
     detail: string;
   };
   about: {
-    encourageContact: string;
+    encourageContact: string[];
   };
   contact: {
     submitted: {

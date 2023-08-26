@@ -4,6 +4,7 @@
   background-color: root.$text-secondary;
   border-radius: 8px;
   border: none;
+  min-width: 120px;
   @include root.mobile {
     height: 30px;
   }
