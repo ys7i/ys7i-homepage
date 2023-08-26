@@ -4,7 +4,7 @@ import { TypedText } from "~/components/atoms/text/TypedText";
 import { ScrollAbout } from "./ScrollAbout";
 import { Resource } from "solid-js";
 import { Skill } from "~/api/contentful";
-import { AppText } from "~/components/atoms/text/Text";
+import { AppText, TranslatableText } from "~/components/atoms/text/Text";
 
 interface AboutBodyProps {
   skills: Resource<
@@ -26,9 +26,9 @@ export function AboutBody({ skills }: AboutBodyProps) {
       </CoverBackground>
       <ScrollAbout skills={skills} />
       <div class="contact-sentence">
-        <AppText
+        <TranslatableText
           variant="h5"
-          text="Please contact me through the Contact page."
+          translationKey="about.encourageContact"
           inputClass="accent"
         />
       </div>

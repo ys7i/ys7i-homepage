@@ -1,3 +1,4 @@
+import { useI18n } from "@solid-primitives/i18n";
 import "./Textfield.scss";
 
 export type Props = {
@@ -13,17 +14,20 @@ export function Textfield({
   isRequired,
   placeholder = "",
 }: Props) {
+  const [t] = useI18n();
   return (
     <div class="form-field">
       {isTextArea ? (
-        <textarea class="input-text" name={id} placeholder={placeholder} />
+        <>
+          <textarea class="input-text" name={id} placeholder={t(placeholder)} />
+        </>
       ) : (
         <input
           class="input-text"
           type="text"
           name={id}
           required={isRequired}
-          placeholder={placeholder}
+          placeholder={t(placeholder)}
         />
       )}
     </div>

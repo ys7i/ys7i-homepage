@@ -1,20 +1,22 @@
+import { useI18n } from "@solid-primitives/i18n";
 import { AppText } from "../text/Text";
 import "./Button.scss";
 
 interface ButtonProps {
-  text: string;
+  key: string;
   onClick?: () => void;
   type?: "submit" | "button";
 }
 
 export function AppButton({
-  text,
+  key,
   onClick = () => {},
   type = "button",
 }: ButtonProps) {
+  const [t] = useI18n();
   return (
     <button class="app-button" onClick={onClick} type={type}>
-      <p>{text}</p>
+      <p>{t(key)}</p>
     </button>
   );
 }

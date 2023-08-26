@@ -2,7 +2,7 @@ import "./Image.scss";
 
 type ImageProps = {
   src: string;
-  objectFit?: "contain" | "cover" | "fill" | "none" | "scale-down";
+  objectFit?: "contain" | "cover" | "fill" | "none" | "scale-down" | null;
   isSticky?: boolean;
   zoomScale?: () => number;
   inputClass?: string;
@@ -18,7 +18,7 @@ export function AppImage({
   return (
     <img
       src={src}
-      classList={{ sticky: isSticky, [objectFit]: true }}
+      classList={{ sticky: isSticky, [objectFit ?? ""]: true }}
       class={inputClass}
       style={{
         transform: `scale(${zoomScale()}, ${zoomScale()})`,

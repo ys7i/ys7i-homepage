@@ -20,6 +20,12 @@ import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { isServer } from "solid-js/web";
 import { CircleLoading } from "./components/atoms/loading/CircleLoading";
+import {
+  I18nContext,
+  createI18nContext,
+  useI18n,
+} from "@solid-primitives/i18n";
+import { i18nDict } from "./i18n";
 
 export default function Root() {
   const [isOverflowHidden, setIsOverflowHidden] = createSignal(false);
@@ -27,6 +33,7 @@ export default function Root() {
   if (!isServer) {
     gsap.registerPlugin(ScrollTrigger);
   }
+  const i18nContext = createI18nContext(i18nDict, "en");
   return (
     <Html lang="en">
       <Head>
@@ -49,13 +56,15 @@ export default function Root() {
       <Body classList={{ "overflow-hidden": isOverflowHidden() }}>
         <Suspense>
           <ErrorBoundary>
-            <Header setOverFlowHidden={setIsOverflowHidden} />
-            <Show when={!isRouting()} fallback={<CircleLoading />}>
-              <Routes>
-                <FileRoutes />
-              </Routes>
-              <Footer />
-            </Show>
+            <I18nContext.Provider value={i18nContext}>
+              <Header setOverFlowHidden={setIsOverflowHidden} />
+              <Show when={!isRouting()} fallback={<CircleLoading />}>
+                <Routes>
+                  <FileRoutes />
+                </Routes>
+                <Footer />
+              </Show>
+            </I18nContext.Provider>
           </ErrorBoundary>
         </Suspense>
         <Scripts />

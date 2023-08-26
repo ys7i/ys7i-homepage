@@ -118,11 +118,9 @@
   overflow-y: visible;
   @include root.tablet {
     margin-top: 1rem;
-
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     justify-content: space-around;
-    gap: 1rem;
     row-gap: 1rem;
   }
   @include root.mobile {

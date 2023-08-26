@@ -20,6 +20,7 @@
   "dependencies": {
     "@aws-sdk/client-ses": "^3.369.0",
     "@aws-sdk/credential-provider-env": "^3.370.0",
+    "@solid-primitives/i18n": "^1.4.0",
     "@solidjs/meta": "^0.28.2",
     "@solidjs/router": "^0.8.2",
     "@types/marked": "^5.0.0",
@@ -34,9 +35,11 @@
     "solid-icons": "^1.0.9",
     "solid-js": "^1.7.2",
     "solid-start": "^0.2.26",
+    "svg-country-flags": "^1.2.10",
     "swiper": "^10.0.3",
     "typed.js": "^2.0.16",
-    "undici": "^5.15.1"
+    "undici": "^5.15.1",
+    "vite-plugin-solid": "^2.7.0"
   },
   "engines": {
     "node": ">=16.8"
