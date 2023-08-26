@@ -22,6 +22,10 @@ export const enDict: I18nLnDict = {
   about: {
     encourageContact: ["Please contact me through the Contact page."],
   },
+  notfound: {
+    title: "Page Not Found",
+    message: "My apologies, but the page you are looking for was not found.",
+  },
   contact: {
     submitted: {
       thanksMessage: [
