@@ -1,4 +1,4 @@
-import { EntryResource } from "~/api/contentful";
+import { EntryBlogResource } from "~/api/contentful";
 import "./BlogCover.scss";
 
 import { BoxWithImage } from "~/components/molecules/box/BoxWithImage";
@@ -8,7 +8,7 @@ import { TypedText } from "~/components/atoms/text/TypedText";
 import { Show } from "solid-js";
 
 interface BlogCoverProps {
-  entries: EntryResource;
+  entries: EntryBlogResource;
 }
 
 export function BlogCover({ entries }: BlogCoverProps) {

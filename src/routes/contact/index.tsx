@@ -3,7 +3,7 @@ import { ContactBody } from "~/components/template/contact/ContactBody";
 
 export default function Contact() {
   return (
-    <main>
+    <main style={{ "padding-bottom": "10vh" }}>
       <Title>ys7i.com Contact Page</Title>
       <Meta
         name="og:description"

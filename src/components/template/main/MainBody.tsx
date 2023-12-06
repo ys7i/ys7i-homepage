@@ -1,10 +1,10 @@
-import { EntryResource } from "~/api/contentful";
+import { EntryBlogResource } from "~/api/contentful";
 import { BlogCover } from "~/components/organisms/main/BlogCover";
 import { ProfileCover } from "~/components/organisms/main/ProfileCover";
 import { TopCover } from "~/components/organisms/main/TopCover";
 
 interface MainBodyProps {
-  entries: EntryResource;
+  entries: EntryBlogResource;
 }
 
 export function MainBody({ entries }: MainBodyProps) {

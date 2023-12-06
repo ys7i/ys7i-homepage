@@ -9,6 +9,7 @@ interface TypedTextProps {
   speed: "fast" | "normal" | "slow";
   loop?: boolean;
   size?: "small" | "normal";
+  colorClass?: string;
 }
 
 export function TypedText({
@@ -17,6 +18,7 @@ export function TypedText({
   loop = false,
   speed,
   size = "normal",
+  colorClass = "primary",
 }: TypedTextProps) {
   let ref: HTMLDivElement | undefined;
   let typed: Typed;
@@ -39,9 +41,10 @@ export function TypedText({
     <div
       classList={{
         "normal-size": size === "normal",
-        "typed-text": true,
+        [colorClass]: true,
         "small-size": size === "small",
       }}
+      class={colorClass ? colorClass : ""}
       style={{ "text-align": textAlign }}
     >
       <span ref={ref} />

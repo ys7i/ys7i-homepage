@@ -1,6 +1,6 @@
 import { For } from "solid-js";
 
-import { EntryResource } from "~/api/contentful";
+import { EntryBlogResource } from "~/api/contentful";
 import { AppText } from "~/components/atoms/text/Text";
 import { TypedText } from "~/components/atoms/text/TypedText";
 import { BlogCard } from "~/components/organisms/card/BlogCard";
@@ -8,7 +8,7 @@ import { CoverBackground } from "~/components/molecules/cover/CoverBackground";
 import "./BlogArchive.scss";
 
 interface BlogBodyProps {
-  entries: EntryResource;
+  entries: EntryBlogResource;
 }
 
 export function BlogArchive({ entries }: BlogBodyProps) {
@@ -20,9 +20,6 @@ export function BlogArchive({ entries }: BlogBodyProps) {
         </div>
       </CoverBackground>
 
-      <div class="archive-text">
-        <AppText variant="h2" text="Archive" />
-      </div>
       <div class="archive-posts">
         <For each={entries()}>
           {(entry) => {

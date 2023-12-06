@@ -1,0 +1,104 @@
+@use "../../../root.scss" as root;
+@use "../../../white-base.scss" as base;
+
+.primary {
+  color: base.$text-primary;
+}
+
+.secondary {
+  color: base.$text-secondary;
+}
+
+.accent {
+  color: base.$text-accent;
+}
+
+.background {
+  color: base.$background-color;
+}
+
+.dark-primary {
+  color: base.$text-dark-primary;
+}
+
+.text-align-start {
+  text-align: start;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.review-top {
+  height: 90vh;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+}
+
+.review-posts {
+  background-color: base.$background-color;
+  margin: 0 auto;
+  z-index: 1;
+  position: relative;
+  margin-top: -5vh;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  @include root.desktop {
+    grid-template-columns: 344px 344px;
+    grid-template-rows: 590px 590px;
+  }
+  @include root.tablet {
+    grid-template-columns: min(344px, 40%) min(344px, 40%);
+    grid-template-rows: 590px 590px;
+  }
+  @include root.mobile {
+    grid-template-columns: min(344px, 80%);
+    grid-template-rows: 590px;
+  }
+  gap: 60px;
+}
+
+.review-card-wrapper {
+  @include root.desktop {
+    width: 344px;
+    height: 590px;
+  }
+  @include root.tablet {
+    height: 590px;
+  }
+  @include root.mobile {
+    width: 100%;
+    height: 590px;
+  }
+}
+
+.areview-text {
+  margin-bottom: 80px;
+}
+
+#review-wrapper {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  background-color: base.$background-color;
+  // background-size: contain;
+  // background-repeat: repeat-y;
+  // background-image: url("/backgrounds/review-cover.jpg");
+  padding-bottom: 10vh;
+}
+
+.archive-color {
+  width: 80%;
+  // height: 500px;
+  margin: 0 auto;
+}

@@ -8,6 +8,7 @@ export const jpDict: I18nLnDict = {
     home: "ホーム",
     about: "自己紹介",
     blog: "ブログ",
+    review: "ガジェット",
     contact: "お問い合わせ",
   },
   top: {

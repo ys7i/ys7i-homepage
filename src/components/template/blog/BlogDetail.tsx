@@ -1,6 +1,7 @@
 import { createEffect, createSignal, For, JSXElement, Show } from "solid-js";
 import { marked } from "marked";
 import DOMPurify from "dompurify";
+import { Chip } from "@suid/material";
 import highlight from "highlight.js";
 import "highlight.js/styles/vs.css";
 import "./BlogDetail.scss";
@@ -93,7 +94,13 @@ export function BlogDetail({ content }: BlogDetailProps) {
           <div id="blog-tags">
             <For each={content?.tags ?? []}>
               {(tag, i) => {
-                return <a>{tag}</a>;
+                return (
+                  <Chip
+                    variant="outlined"
+                    label={tag}
+                    sx={{ color: "inherit" }}
+                  />
+                );
               }}
             </For>
           </div>

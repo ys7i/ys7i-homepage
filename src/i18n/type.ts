@@ -18,6 +18,7 @@ export type I18nLnDict = DeepReadonly<{
     home: string;
     about: string;
     blog: string;
+    review: string;
     contact: string;
   };
   top: {

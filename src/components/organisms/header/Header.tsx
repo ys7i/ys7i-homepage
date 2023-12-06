@@ -48,6 +48,7 @@ export function Header({ setOverFlowHidden }: HeaderProps) {
           <Link key="header.home" href="/" />
           <Link key="header.about" href="/about" />
           <Link key="header.blog" href="/blog" />
+          <Link key="header.review" href="/review" />
           <Link key="header.contact" href="/contact" />
           <Select
             value={locale()}
@@ -91,6 +92,11 @@ export function Header({ setOverFlowHidden }: HeaderProps) {
             <Link
               key="header.blog"
               href="/blog"
+              onClick={() => toggleHeaderButtonClass()}
+            />
+            <Link
+              key="header.review"
+              href="/review"
               onClick={() => toggleHeaderButtonClass()}
             />
             <Link

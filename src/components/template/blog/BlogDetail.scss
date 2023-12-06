@@ -119,6 +119,8 @@ hr {
     font-size: 22px;
     line-height: 66px;
     text-align: start;
+    text-decoration: underline;
+    text-shadow: 4px 4px 4px #606060;
   }
 
   h2 {
@@ -136,6 +138,10 @@ hr {
   p {
     text-align: start;
     font-weight: 100;
+  }
+
+  span {
+    color: root.$text-primary;
   }
 
   img {

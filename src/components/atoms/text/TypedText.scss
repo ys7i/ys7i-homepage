@@ -1,9 +1,5 @@
 @use "../../../root.scss" as root;
 
-.typed-text {
-  color: root.$text-primary;
-}
-
 .normal-size {
   @include root.mobile {
     font-size: 40px;

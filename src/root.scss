@@ -11,9 +11,10 @@ $text-accent: #889ce7;
 $grey: #888;
 
 @mixin font-family {
-  font-family: HelveticaNeue, "Helvetica Neue", Helvetica, Arial, 游ゴシック体,
-    YuGothic, "游ゴシック Medium", "Yu Gothic Medium", 游ゴシック, "Yu Gothic",
-    "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro W3",
+  font-family: "Noto Sans Japanese", sans-serif, HelveticaNeue, "Helvetica Neue",
+    Helvetica, Arial, 游ゴシック体, YuGothic, "游ゴシック Medium",
+    "Yu Gothic Medium", 游ゴシック, "Yu Gothic", "ヒラギノ角ゴ ProN W3",
+    "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro W3",
     "Hiragino Kaku Gothic Pro", "MS ゴシック", "MS Gothic", sans-serif;
 }
 

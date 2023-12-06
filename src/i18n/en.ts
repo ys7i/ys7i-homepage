@@ -8,6 +8,7 @@ export const enDict: I18nLnDict = {
     home: "HOME",
     about: "About",
     blog: "Blog",
+    review: "Review",
     contact: "Contact",
   },
   top: {
