@@ -3,6 +3,7 @@ import { Meta, Title, useRouteData } from "solid-start";
 import { BlogArchive } from "~/components/template/blog/BlogArchive";
 import { getBlogEntries } from "~/api/contentful";
 import { createServerData$ } from "solid-start/server";
+import { Box } from "@suid/material";
 
 export function routeData() {
   return createServerData$(() => {

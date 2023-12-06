@@ -22,6 +22,7 @@ export function Footer() {
           <Link key="header.about" href="/about" />
           <Link key="header.blog" href="/blog" />
           <Link key="header.contact" href="/contact" />
+          <Link key="header.review" href="/review" />
         </div>
         <div class="icon-links">
           <TranslatableText
