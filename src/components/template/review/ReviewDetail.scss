@@ -108,6 +108,24 @@
       font-weight: 200;
     }
   }
+  img {
+    margin: 0 auto;
+    @include root.desktop {
+      width: 400px;
+    }
+    @include root.tablet {
+      width: 350px;
+    }
+    @include root.mobile {
+      width: 250px;
+    }
+    margin-bottom: 3rem;
+  }
+  p:has(img) {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    text-align: center !important;
+  }
 }
 
 .amazon-link {
@@ -173,7 +191,7 @@ p:has(.amazon-link) {
   padding-top: 6rem;
   padding-bottom: 3rem;
   @include root.desktop {
-    font-size: 40px !important;
+    font-size: 35px !important;
     font-weight: 500;
   }
   @include root.tablet {
