@@ -10,6 +10,10 @@
   }
 }
 
+#review-top {
+  height: 90vh;
+}
+
 #review-content {
   text-align: left;
   @include root.desktop {
