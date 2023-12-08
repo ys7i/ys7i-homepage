@@ -10,6 +10,17 @@
   }
 }
 
+.review-top {
+  height: 90vh;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+}
+
 #review-top {
   height: 90vh;
 }
