@@ -1,7 +1,6 @@
 import { For } from "solid-js";
 
 import { EntryBlogResource } from "~/api/contentful";
-import { AppText } from "~/components/atoms/text/Text";
 import { TypedText } from "~/components/atoms/text/TypedText";
 import { BlogCard } from "~/components/organisms/card/BlogCard";
 import { CoverBackground } from "~/components/molecules/cover/CoverBackground";
